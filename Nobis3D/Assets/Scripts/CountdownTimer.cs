@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class CountdownTimer : MonoBehaviour
 {
+    public GameObject winMenuUI;
+
     [Header("Шрифты")]
     [SerializeField] Font[] myFonts;
     private Text textFont; // шрифты
@@ -13,10 +15,19 @@ public class CountdownTimer : MonoBehaviour
     float startingTime = 15f;
     [SerializeField] Text countdownText;
 
+    public float enemySpeed;
+    public float stoppingDistance = 1f;
+    private Transform target;
 
+    private void Awake()
+    {
+        winMenuUI.SetActive(false);
+    }
 
     private void Start()
     {
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+
         //изменение таймера
         currentTime = startingTime;
 
@@ -38,21 +49,30 @@ public class CountdownTimer : MonoBehaviour
             //ChangeFont();
             textFont.font = myFonts[1];
         }
-        
+
         //не уходить за ноль:
-        if(currentTime <= 0)
+        if (currentTime <= 0)
         {
             currentTime = 0;
-            Lose();
+            Win();
         }
-
+        //else if (Vector3.Distance(transform.position, target.position) > stoppingDistance) // баг тут надо пофиксить
+        //{
+        //    Lose();
+        //}
     }
 
+  
     void Lose()
     {
-        print("You Lose!");
+        Debug.Log("You Lose!");
     }
 
+    void Win()
+    {
+        Debug.Log("You Win!");
+        winMenuUI.SetActive(true); //активация паузы
+    }
     //void ChangeFont()
     //{
     //    //изменение шрифта

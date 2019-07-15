@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a92ff676d11fe4945a9dadc2bf25c9ee
+guid: f1b734b6f472bf64dbf2c7ccd6cd8083
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -12,7 +12,7 @@ TrueTypeFontImporter:
   fontNames:
   - Roboto Light
   fallbackFontReferences:
-  - {fileID: 12800000, guid: 9e8c8e16cc1f8e5458f5c4c1af491193, type: 3}
+  - {fileID: 12800000, guid: bda52e704610125479dece5b503444d0, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
