@@ -29,7 +29,7 @@ public class NewEnemyController : MonoBehaviour
         //rangeplayer1 = Vector3.Distance(transform.position, Player.transform.position);
         //rangeplayer2 = Vector3.Distance(transform.position, Player2.transform.position);
 
-        if (!Player)
+        if (!Player || !Player2)
         {
             Debug.Log("Make sure your player is tagged!!");
         }
