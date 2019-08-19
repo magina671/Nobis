@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.Networking;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : NetworkBehaviour
 {
     //основные настройки
     public float speedMove;
@@ -16,6 +17,9 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        //if (!isLocalPlayer)
+        //    return;
+
         CharacterMove();
     }
 

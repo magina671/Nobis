@@ -1,7 +1,8 @@
 ﻿using UnityEngine.AI;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Player2Controller : MonoBehaviour
+public class Player2Controller : NetworkBehaviour
 {
     public Camera cam;
 
@@ -9,6 +10,9 @@ public class Player2Controller : MonoBehaviour
 
     private void Update()
     {
+        //if (!isLocalPlayer)
+        //    return;
+
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition); //луч в место нажатия мышки
